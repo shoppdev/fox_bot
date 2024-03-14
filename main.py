@@ -12,11 +12,12 @@ intents = discord.Intents.default()
 intents.message_content = True
 client = discord.Client(intents = intents)
 
+
 # bot connects to server
 @client.event
 async def on_ready():
-    # print(f'{client.user} has connected to Discord!')
-    
+    print('\n\nHello! This is fox_bot. Hope you have fun while Im around\n\n')
+
     for guild in client.guilds:
         if guild.name == GUILD:
             break
@@ -37,7 +38,7 @@ async def on_message(message):
 
     print(f'Message from {username}, on channel {channel}, that says: {user_message}')
     
-    # check if fox is talking if so dont respond to yourself
+    # check if fox is talking if so fox dosent respond to themself
     if message.author != client.user:
         
         # fox listen and respond here
@@ -49,7 +50,7 @@ async def on_message(message):
             await message.channel.send('Minty!!!')
         elif 'sad' in user_message.lower():
             await message.channel.send(f'Aww. Chear up {username}.')
-
-
+        elif '!' == user_message[0]:
+            await message.channel.send('I will be able to help with this soon')
 
 client.run(TOKEN)
