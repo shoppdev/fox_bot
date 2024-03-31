@@ -10,7 +10,7 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 GUILD = os.getenv('DISCORD_GUILD')
 intents = discord.Intents.default()
 intents.message_content = True
-client = discord.Client(intents = intents)
+client = discord.Client(intents = intents) 
 
 
 # bot connects to server
