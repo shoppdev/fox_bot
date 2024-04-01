@@ -33,9 +33,9 @@ async def on_ready():
 # bot responds to messages
 @client.event
 async def on_message(message):
-    username = str(message.author).split('#')[0]
-    channel = str(message.channel.name)
-    user_message = str(message.content)
+    username = str(message.author).split('#')[0]    # break down usernames to look better printed out (drop the #0000)
+    channel = str(message.channel.name)             # grab the channel name
+    user_message = str(message.content)             # grab the user message
 
     # print(f'Message from {username}, on channel {channel}, that says: {user_message}')
     
@@ -51,7 +51,7 @@ async def on_message(message):
             await message.channel.send('Minty!!!')
         elif 'sad' in user_message.lower():
             await message.channel.send(f'Aww. Chear up {username}.')
-        elif '!help' == user_message[0]:
+        elif 'help' == user_message[0]:
             await message.channel.send('I will soon list some help stuff here.')
 
 
