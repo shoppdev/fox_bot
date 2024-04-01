@@ -22,10 +22,10 @@ async def on_ready():
     for guild in client.guilds:
         print(guild)
 
-    print(
-        f'{client.user} is connected to the following guild:\n'
-        f'{guild.name}(id: {guild.id})\n'
-    )
+    # print(
+    #     f'{client.user} is connected to the following guild:\n'
+    #     f'{guild.name}(id: {guild.id})\n'
+    # )
     
     
 
@@ -40,8 +40,7 @@ async def on_message(message):
     # print(f'Message from {username}, on channel {channel}, that says: {user_message}')
     
     # check if fox is talking if so fox dosent respond to themself
-    if message.author != client.user:
-        
+    if message.author != client.user:      
         # fox listen and respond here
         if 'hello' in user_message.lower():
             await message.channel.send(f'Oh, Hi {username}.')
